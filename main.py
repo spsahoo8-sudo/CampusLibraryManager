@@ -1,5 +1,4 @@
-#from models import Book, Member
-from models import LibraryItem, Book, Magazine, DVD, Member
+from model import Book, Magazine, DVD, Member
 
 book = Book("Python 101", 1, "A. Rao")
 magazine = Magazine("Tech Today", 2, 42)
@@ -10,7 +9,6 @@ alice = Member("Alice", 101)
 bob = Member("Bob", 102, max_items=1)
 charlie = Member("Charlie", 103, max_items=2)
 
-
 # 1. Borrowing with error handling
 try:
     alice.borrow(book)
@@ -18,6 +16,7 @@ try:
     bob.borrow(book)  # should fail: already borrowed
 except ValueError as e:
     print("Could not borrow:", e)
+    
 # 2. TODO: trigger the borrow-limit error and the not-borrowed error, catching each
 print("\n--- Borrow limit ---")
 try:
@@ -30,7 +29,7 @@ except ValueError as e:
 print("\n--- Alice fills her limit of 3 ---")
 try:
     alice.borrow(dvd)
-    alice.borrow(extra)
+    alice.borrow(book2)
     print("Alice now holds:", alice.borrowed_titles())
     alice.borrow(Book("Fourth Book", 5, "Anon"))  # should fail: limit of 3
 except ValueError as e:
@@ -38,7 +37,7 @@ except ValueError as e:
 
 
 # 3. Polymorphism: one loop, no type checks
-items = [book]  # TODO: add the magazine and the DVD
+items = [book, magazine, dvd, book2]
 for item in items:
     print(item.describe(), "-> late fee for 3 days: Rs", item.late_fee(3))
 # 4. Class attribute shared by all objects
