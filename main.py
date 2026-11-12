@@ -35,7 +35,7 @@ try:
 except ValueError as e:
     print("Could not borrow:", e)
 
-
+print("\n--- Late Fees ---")
 # 3. Polymorphism: one loop, no type checks
 items = [book, magazine, dvd, book2]
 for item in items:

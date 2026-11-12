@@ -1,0 +1,17 @@
+Alice borrowed: Book: Python 101 by A. Rao (ID 1)
+Could not borrow: 'Python 101' is already borrowed.
+
+--- Borrow limit ---
+Bob borrowed: Magazine: Tech Today, issue 42 (ID 2)
+Could not borrow: Bob has reached the borrow limit of 1 item(s).
+
+--- Alice fills her limit of 3 ---
+Alice now holds: ['Python 101', 'Intro to Algorithms', 'Python Advanced']
+Could not borrow: Alice has reached the borrow limit of 3 item(s).
+
+--- Late Fees ---
+Book: Python 101 by A. Rao (ID 1) -> late fee for 3 days: Rs 6
+Magazine: Tech Today, issue 42 (ID 2) -> late fee for 3 days: Rs 3
+DVD: Intro to Algorithms, 95 min (ID 3) -> late fee for 3 days: Rs 15
+Book: Python Advanced by BN. Rao (ID 4) -> late fee for 3 days: Rs 6
+Total items created: 5
